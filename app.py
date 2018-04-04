@@ -156,7 +156,7 @@ def update(item):
         s= TodoItem.query.filter_by(id=item).first()
         s.priority= form.items.data
         db.session.commit()
-        flash("Updated priority of:",+s.description)#ERROR
+        flash("Updated priority of: " + s.description)
         return redirect(url_for('all_lists'))
     return render_template('update_item.html', form=form, item=item)
 # TODO 364: Fill in the update_item.html template to work properly with this update route. (HINT: Compare against example!)
